@@ -1,18 +1,16 @@
 import React from "react";
 import MasterLayout from "../layout/MasterLayout";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import Loader from "../components/Loader";
 
 const Home = () => {
   return (
     <>
       <MasterLayout>
-        {/* <Loader /> */}
         {/* Home Inner layout */}
         <section className="hero">
           <div className="container">
             <div className="row">
-              <div className="col-md-7">
+              <div className="col-lg-7">
                 <div className="intro">
                   <h2 className="title">
                     Capture your <br /> won <span>picture and video</span>
@@ -41,9 +39,9 @@ const Home = () => {
                   <button>Get Started</button>
                 </div>
               </div>
-              <div className="col-md-5">
+              <div className="col-lg-5">
                 <div className="profile-img">
-                  <img src="/img/profile.png" alt="" />
+                  <img className="img-fluid" src="/img/profile.png" alt="" />
                 </div>
               </div>
             </div>
@@ -86,13 +84,13 @@ const Home = () => {
               <div className="feature">
                 <h2 className="sub-title">Our Main Feature</h2>
                 <h3 className="title">
-                  Access professionally curated <br /> digital assets.
+                  Access professionally curated digital assets.
                 </h3>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-lg-4">
               <div className="feature-item">
                 <div className="img_wrap">
                   <img
@@ -104,7 +102,7 @@ const Home = () => {
                 <h3 className="item_title">Versatile Typography Options</h3>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-lg-4">
               <div className="feature-item">
                 <div className="img_wrap">
                   <img
@@ -116,7 +114,7 @@ const Home = () => {
                 <h3 className="item_title">Versatile Typography Options</h3>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-lg-4">
               <div className="feature-item">
                 <div className="img_wrap">
                   <img

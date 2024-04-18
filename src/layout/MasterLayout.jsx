@@ -1,9 +1,15 @@
-import React from "react";
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaFacebookF, FaLinkedinIn, FaPlus, FaTwitter } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Loader from "../components/Loader";
+import { FaXmark } from "react-icons/fa6";
+import { FiMenu } from "react-icons/fi";
 
 const MasterLayout = (props) => {
+  const [sidebar, setSidebar] = useState(false);
+  const sidebarControl = () => {
+    setSidebar(!sidebar);
+  };
   return (
     <section className="root">
       <Loader />
@@ -12,13 +18,13 @@ const MasterLayout = (props) => {
         <section>
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-4">
                 <div className="logo">
-                  <img src="/img/logo-inverse.webp" alt="" />
+                  <img src="/img/logo-inverse.png" alt="" />
                 </div>
               </div>
-              <div className="col-md-6">
-                <nav>
+              <div className="col-8">
+                <nav className="main">
                   <ul>
                     <li>
                       <NavLink
@@ -46,10 +52,53 @@ const MasterLayout = (props) => {
                     </li>
                   </ul>
                 </nav>
+                <div className="menu-icon" onClick={sidebarControl}>
+                  <FiMenu />
+                </div>
               </div>
             </div>
           </div>
         </section>
+
+        {/* sidebar */}
+        <div className={`sidebar ${sidebar && "active"}`}>
+          <nav>
+            <div className="inner">
+              <div className="logo">
+                <img src="/img/logo-inverse.png" alt="" />
+                <div className="close" onClick={sidebarControl}>
+                  <FaXmark />
+                </div>
+              </div>
+              <ul>
+                <li>
+                  <NavLink
+                    to="/"
+                    className={(navData) => navData.isActive && "active"}
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/capture-photo"
+                    className={(navData) => navData.isActive && "active"}
+                  >
+                    Capture Photo
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/capture-video"
+                    className={(navData) => navData.isActive && "active"}
+                  >
+                    Capture Video
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </header>
       {/* Main body */}
       <main>{props.children}</main>
@@ -69,12 +118,12 @@ const MasterLayout = (props) => {
             <hr />
             <div className="top-footer">
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-xl-4">
                   <div>
                     <p>themesoft69 © 2024. All Rights Reserved.</p>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-xl-4">
                   <div className="menu">
                     <ul>
                       <li>
@@ -89,7 +138,7 @@ const MasterLayout = (props) => {
                     </ul>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-xl-4">
                   <div className="social">
                     <ul>
                       <li>
