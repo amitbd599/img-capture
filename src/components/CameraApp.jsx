@@ -22,21 +22,33 @@ const CameraApp = () => {
   };
 
   return (
-    <div>
-      <Webcam
-        audio={false}
-        screenshotQuality={1}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-      />
-      <button onClick={capture}>Capture Photo</button>
-      {capturedImage && (
-        <div>
-          <img src={capturedImage} alt="Captured" />
-          <button onClick={saveImage}>Save Photo</button>
+    <section className="camera">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="webcam">
+              <Webcam
+                audio={false}
+                screenshotQuality={1}
+                ref={webcamRef}
+                screenshotFormat="image/jpeg"
+              />
+              <button onClick={capture}>Capture Photo</button>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="capture-data">
+              {capturedImage && (
+                <div>
+                  <img src={capturedImage} alt="Captured" />
+                  <button onClick={saveImage}>Save Photo</button>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      )}
-    </div>
+      </div>
+    </section>
   );
 };
 

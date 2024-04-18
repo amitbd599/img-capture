@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 
 const VideoApp = () => {
@@ -49,18 +49,54 @@ const VideoApp = () => {
       setRecordedChunks([]);
     }
   }, [recordedChunks]);
+
+  let [record, setRecord] = useState(true);
+
+  const handelCheck = (e) => {
+    setRecord(e);
+  };
+
   return (
-    <>
-      <Webcam audio={false} ref={webcamRef} />
-      {capturing ? (
-        <button onClick={handleStopCaptureClick}>Stop Capture</button>
-      ) : (
-        <button onClick={handleStartCaptureClick}>Start Capture</button>
-      )}
-      {recordedChunks.length > 0 && (
-        <button onClick={handleDownload}>Download</button>
-      )}
-    </>
+    <section className="camera">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <Webcam audio={record} ref={webcamRef} />
+            <div>
+              <label className="cyberpunk-checkbox-label">
+                <input
+                  type="checkbox"
+                  defaultChecked={true}
+                  onChange={(e) => handelCheck(e.target.checked)}
+                  className="cyberpunk-checkbox"
+                />
+                Record with sound?
+              </label>
+
+              {capturing ? (
+                <button onClick={handleStopCaptureClick}>
+                  Stop Video Record
+                </button>
+              ) : (
+                <button onClick={handleStartCaptureClick}>
+                  Start Video Record
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6">
+            <div>
+              {recordedChunks.length > 0 && (
+                <button onClick={handleDownload}>Download Video</button>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

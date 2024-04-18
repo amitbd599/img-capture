@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "../components/Header";
 import CameraApp from "../components/CameraApp";
+import MasterLayout from "../layout/MasterLayout";
 
 const CapturePhoto = () => {
   return (
-    <>
-      <Header />
+    <MasterLayout>
       <CameraApp />
-    </>
+    </MasterLayout>
   );
 };
 

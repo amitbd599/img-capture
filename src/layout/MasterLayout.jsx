@@ -1,10 +1,12 @@
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const MasterLayout = (props) => {
   return (
     <section className="root">
+      <Loader />
       {/* Header */}
       <header>
         <section>
@@ -19,13 +21,28 @@ const MasterLayout = (props) => {
                 <nav>
                   <ul>
                     <li>
-                      <Link to="/">Home</Link>
+                      <NavLink
+                        to="/"
+                        className={(navData) => navData.isActive && "active"}
+                      >
+                        Home
+                      </NavLink>
                     </li>
                     <li>
-                      <Link to="/capture-photo">Capture Photo</Link>
+                      <NavLink
+                        to="/capture-photo"
+                        className={(navData) => navData.isActive && "active"}
+                      >
+                        Capture Photo
+                      </NavLink>
                     </li>
                     <li>
-                      <Link to="/capture-video">Capture Video</Link>
+                      <NavLink
+                        to="/capture-video"
+                        className={(navData) => navData.isActive && "active"}
+                      >
+                        Capture Video
+                      </NavLink>
                     </li>
                   </ul>
                 </nav>
@@ -54,7 +71,7 @@ const MasterLayout = (props) => {
               <div className="row">
                 <div className="col-md-4">
                   <div>
-                    <p>AxiomThemes © 2024. All Rights Reserved.</p>
+                    <p>themesoft69 © 2024. All Rights Reserved.</p>
                   </div>
                 </div>
                 <div className="col-md-4">
@@ -64,10 +81,10 @@ const MasterLayout = (props) => {
                         <Link to={"/"}>Home</Link>
                       </li>
                       <li>
-                        <Link to={"/"}>Capture Photo</Link>
+                        <Link to={"/capture-photo"}>Capture Photo</Link>
                       </li>
                       <li>
-                        <Link to={"/"}>Capture Video</Link>
+                        <Link to={"/capture-video"}>Capture Video</Link>
                       </li>
                     </ul>
                   </div>

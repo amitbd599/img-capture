@@ -1,11 +1,13 @@
 import React from "react";
 import MasterLayout from "../layout/MasterLayout";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import Loader from "../components/Loader";
 
 const Home = () => {
   return (
     <>
       <MasterLayout>
+        {/* <Loader /> */}
         {/* Home Inner layout */}
         <section className="hero">
           <div className="container">
