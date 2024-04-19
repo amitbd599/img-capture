@@ -36,7 +36,9 @@ const Home = () => {
                       </li>
                     </ul>
                   </div>
-                  <button>Get Started</button>
+                  <button>
+                    <a href="#get">Get Started</a>
+                  </button>
                 </div>
               </div>
               <div className="col-lg-5">
@@ -49,7 +51,7 @@ const Home = () => {
         </section>
 
         {/* We offer */}
-        <div className="container">
+        <div className="container" id="get">
           <div className="row">
             <div className="col-12">
               <div className="offer">

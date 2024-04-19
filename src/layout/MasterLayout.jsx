@@ -18,12 +18,14 @@ const MasterLayout = (props) => {
         <section>
           <div className="container">
             <div className="row">
-              <div className="col-4">
+              <div className="col-9 col-md-4">
                 <div className="logo">
-                  <img src="/img/logo-inverse.png" alt="" />
+                  <Link to={"/"}>
+                    <img src="/img/logo-inverse.png" alt="" />
+                  </Link>
                 </div>
               </div>
-              <div className="col-8">
+              <div className="col-3 col-md-8">
                 <nav className="main">
                   <ul>
                     <li>
@@ -52,8 +54,8 @@ const MasterLayout = (props) => {
                     </li>
                   </ul>
                 </nav>
-                <div className="menu-icon" onClick={sidebarControl}>
-                  <FiMenu />
+                <div className="menu-icon">
+                  <FiMenu onClick={sidebarControl} />
                 </div>
               </div>
             </div>

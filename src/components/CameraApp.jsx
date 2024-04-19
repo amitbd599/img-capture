@@ -25,7 +25,7 @@ const CameraApp = () => {
     <section className="camera">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-xl-6">
             <div className="webcam">
               <Webcam
                 audio={false}
@@ -36,13 +36,17 @@ const CameraApp = () => {
               <button onClick={capture}>Capture Photo</button>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-xl-6">
             <div className="capture-data">
               {capturedImage && (
-                <div>
-                  <img src={capturedImage} alt="Captured" />
+                <>
+                  <img
+                    className="img-fluid"
+                    src={capturedImage}
+                    alt="Captured"
+                  />
                   <button onClick={saveImage}>Save Photo</button>
-                </div>
+                </>
               )}
             </div>
           </div>

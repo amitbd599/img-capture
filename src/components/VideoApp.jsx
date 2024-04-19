@@ -60,7 +60,7 @@ const VideoApp = () => {
     <section className="camera">
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-xl-6">
             <Webcam audio={record} ref={webcamRef} />
             <div>
               <label className="cyberpunk-checkbox-label">
@@ -87,7 +87,7 @@ const VideoApp = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-xl-6">
             <div>
               {recordedChunks.length > 0 && (
                 <button onClick={handleDownload}>Download Video</button>
