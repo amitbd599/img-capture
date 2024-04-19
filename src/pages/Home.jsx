@@ -1,6 +1,7 @@
 import React from "react";
 import MasterLayout from "../layout/MasterLayout";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -13,32 +14,40 @@ const Home = () => {
               <div className="col-lg-7">
                 <div className="intro">
                   <h2 className="title">
-                    Capture your <br /> won <span>picture and video</span>
+                    Capture your <br /> own <span>picture and video</span>
                   </h2>
+
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Distinctio blanditiis consequuntur itaque libero temporibus
-                    inventore sint atque molestiae eos accusantium! Lorem ipsum
-                    dolor, sit amet consectetur adipisicing elit. Distinctio
-                    blanditiis consequuntur itaque libero temporibus inventore
-                    sint atque molestiae eos accusantium!
+                    FixLab is a cutting-edge ReactJS tool designed for capturing
+                    personal pictures and videos. Its intuitive interface offers
+                    instant access to your device's camera, customizable
+                    settings, and seamless navigation. With features like media
+                    management, privacy protection, and cross-platform
+                    compatibility, SnapMaster ensures a smooth and secure
+                    capturing experience. Stay tuned for continuous updates and
+                    enhancements to elevate your capturing experience further.
                   </p>
                   <div className="list">
                     <ul>
                       <li>
-                        <FaArrowAltCircleRight /> Easy to capture your image.
+                        <FaArrowAltCircleRight /> Capture your photos instantly.
                       </li>
                       <li>
-                        <FaArrowAltCircleRight /> Easy to capture your Video.
+                        <FaArrowAltCircleRight /> Record your video instantly
+                        with download.
                       </li>
                       <li>
-                        <FaArrowAltCircleRight /> Easy to capture your Video.
+                        <FaArrowAltCircleRight /> Audio Record.
+                      </li>
+
+                      <li>
+                        <FaArrowAltCircleRight /> Easy Controls.
                       </li>
                     </ul>
                   </div>
-                  <button>
-                    <a href="#get">Get Started</a>
-                  </button>
+                  <a href="#get">
+                    <button>Get Started</button>
+                  </a>
                 </div>
               </div>
               <div className="col-lg-5">
@@ -57,7 +66,7 @@ const Home = () => {
               <div className="offer">
                 <h2 className="sub-title">What We Offer</h2>
                 <h3 className="title">
-                  Access professionally curated digital assets.
+                  FixLab tools provide capture photos and record audio & videos
                 </h3>
               </div>
 
@@ -65,13 +74,19 @@ const Home = () => {
                 <div className="img-body">
                   <img className="img-fluid" src="/img/webcam-1.jpg" alt="" />
                   <h2>
-                    <a href="/capture-photo">Capture Photo</a>
+                    <Link to="/capture-photo">Capture Photo</Link>
                   </h2>
                 </div>
                 <div className="img-body">
                   <img className="img-fluid" src="/img/webcam-2.jpg" alt="" />
                   <h2>
-                    <a href="/capture-video">Capture Video</a>
+                    <Link to="/capture-video">Capture Video</Link>
+                  </h2>
+                </div>
+                <div className="img-body">
+                  <img className="img-fluid" src="/img/webcam-3.jpg" alt="" />
+                  <h2>
+                    <Link to="/audio-recording">Record Audio</Link>
                   </h2>
                 </div>
               </div>
@@ -86,7 +101,7 @@ const Home = () => {
               <div className="feature">
                 <h2 className="sub-title">Our Main Feature</h2>
                 <h3 className="title">
-                  Access professionally curated digital assets.
+                  With FixLab, there's no delay in capturing the perfect shot
                 </h3>
               </div>
             </div>
@@ -101,7 +116,9 @@ const Home = () => {
                     alt="img"
                   />
                 </div>
-                <h3 className="item_title">Versatile Typography Options</h3>
+                <h3 className="item_title">
+                  Real-time <br /> Preview
+                </h3>
               </div>
             </div>
             <div className="col-lg-4">
@@ -113,7 +130,9 @@ const Home = () => {
                     alt="img"
                   />
                 </div>
-                <h3 className="item_title">Versatile Typography Options</h3>
+                <h3 className="item_title">
+                  Record Audio & video with download option
+                </h3>
               </div>
             </div>
             <div className="col-lg-4">
@@ -125,7 +144,9 @@ const Home = () => {
                     alt="img"
                   />
                 </div>
-                <h3 className="item_title">Versatile Typography Options</h3>
+                <h3 className="item_title">
+                  Mobile <br /> Responsive
+                </h3>
               </div>
             </div>
           </div>

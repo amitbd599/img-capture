@@ -11,7 +11,7 @@ function Loader() {
     <>
       {active === true && (
         <section className="loader">
-          <div class="spinner">
+          <div className="spinner">
             <div></div>
             <div></div>
             <div></div>

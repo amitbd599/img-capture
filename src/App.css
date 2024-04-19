@@ -111,7 +111,8 @@ header nav ul li a.active {
   margin-top: 10px;
   background-image: var(--background-image);
   border: none;
-
+  text-decoration: none;
+  color: #fff;
   padding: 8px 16px;
   font-size: 16px;
   border-radius: 5px;
@@ -133,25 +134,22 @@ header nav ul li a.active {
   font-weight: 600;
   color: var(--p-color);
   text-transform: capitalize;
+  padding-right: 430px;
 }
 .feature-item {
   margin-top: 40px;
   border-radius: 10px;
   background-color: #0f1024;
-  height: 388px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 58px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 30px 50px;
 }
 .feature-item .img_wrap {
   display: flex;
   justify-content: center;
 }
 .feature-item .img_wrap img {
-  width: 220px;
   border-radius: 20px;
 }
 .feature-item .item_title {
@@ -168,7 +166,7 @@ header nav ul li a.active {
 .offer {
   margin-top: 20px;
   text-align: center;
-  padding: 0 300px;
+  padding: 0 260px;
 }
 
 .offer .sub-title {
@@ -250,7 +248,6 @@ header nav ul li a.active {
   opacity: 1;
 }
 .camera {
-  /* min-height: calc(100vh - 200px); */
   width: 100%;
   padding: 100px 0;
 }
@@ -266,6 +263,23 @@ header nav ul li a.active {
   padding: 8px 16px;
   font-size: 16px;
   border-radius: 5px;
+}
+.record {
+  width: 100%;
+  padding: 100px 0;
+}
+.record button {
+  margin-top: 10px;
+  background-image: var(--background-image);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.record .btn-inner {
+  display: flex;
+  gap: 30px;
 }
 
 .loader {
@@ -508,7 +522,7 @@ header nav ul li a.active {
 .footer .top-footer .social ul {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   gap: 10px;
   padding-left: 0;
 }
@@ -526,6 +540,75 @@ header nav ul li a.active {
   color: var(--theme-color);
 }
 
+/* Loader */
+
+.loader-audio {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader-audio div {
+  position: absolute;
+  top: 50px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #c517f0;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader-audio div:nth-child(1) {
+  left: 8px;
+  animation: flip1 0.6s infinite;
+}
+
+.loader-audio div:nth-child(2) {
+  left: 8px;
+  animation: flip2 0.6s infinite;
+}
+
+.loader-audio div:nth-child(3) {
+  left: 32px;
+  animation: flip2 0.6s infinite;
+}
+
+.loader-audio div:nth-child(4) {
+  left: 56px;
+  animation: flip3 0.6s infinite;
+}
+
+@keyframes flip1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flip3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes flip2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 /* Responsive */
 
 @media only screen and (max-width: 1200px) {
@@ -540,6 +623,9 @@ header nav ul li a.active {
   }
   video {
     width: 100%;
+  }
+  .feature .title {
+    padding-right: 80px;
   }
 
   .footer .top-footer p {
@@ -584,6 +670,10 @@ header nav ul li a.active {
     padding-top: 50px;
     padding-bottom: 0;
   }
+  .record {
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
 }
 @media only screen and (max-width: 520px) {
   .hero {
@@ -597,6 +687,9 @@ header nav ul li a.active {
     gap: 10px;
     padding-left: 0;
     justify-content: start;
+  }
+  .feature .title {
+    padding-right: 0;
   }
   .capture .img-body h2 a {
     font-size: 16px;

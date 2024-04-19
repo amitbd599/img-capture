@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaLinkedinIn, FaPlus, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import Loader from "../components/Loader";
 import { FaXmark } from "react-icons/fa6";
@@ -52,6 +52,14 @@ const MasterLayout = (props) => {
                         Capture Video
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink
+                        to="/audio-recording"
+                        className={(navData) => navData.isActive && "active"}
+                      >
+                        Audio Recording
+                      </NavLink>
+                    </li>
                   </ul>
                 </nav>
                 <div className="menu-icon">
@@ -97,6 +105,14 @@ const MasterLayout = (props) => {
                     Capture Video
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/audio-recording"
+                    className={(navData) => navData.isActive && "active"}
+                  >
+                    Audio Recording
+                  </NavLink>
+                </li>
               </ul>
             </div>
           </nav>
@@ -110,53 +126,38 @@ const MasterLayout = (props) => {
           <div>
             <div className="info">
               <h2 className="title">
-                Get the best blog stories <br /> into your inbox!
+                So let's get started <br /> with FixLab
               </h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-                eaque.
+                By using this application of ours, you can do all the multimedia
+                tasks properly
               </p>
             </div>
-            <hr />
-            <div className="top-footer">
+            <div className="top-footer mt-3">
               <div className="row">
-                <div className="col-xl-4">
+                <div className="col-xl-6">
                   <div>
                     <p>themesoft69 © 2024. All Rights Reserved.</p>
                   </div>
                 </div>
-                <div className="col-xl-4">
-                  <div className="menu">
-                    <ul>
-                      <li>
-                        <Link to={"/"}>Home</Link>
-                      </li>
-                      <li>
-                        <Link to={"/capture-photo"}>Capture Photo</Link>
-                      </li>
-                      <li>
-                        <Link to={"/capture-video"}>Capture Video</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-xl-4">
+
+                <div className="col-xl-6">
                   <div className="social">
                     <ul>
                       <li>
-                        <a href="#">
+                        <Link to="#">
                           <FaFacebookF />
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">
+                        <Link to="#">
                           <FaTwitter />
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="#">
+                        <Link to="#">
                           <FaLinkedinIn />
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>

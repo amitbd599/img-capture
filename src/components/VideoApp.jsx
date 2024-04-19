@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Webcam from "react-webcam";
 
 const VideoApp = () => {
@@ -17,7 +17,7 @@ const VideoApp = () => {
       handleDataAvailable
     );
     mediaRecorderRef.current.start();
-  }, [webcamRef, setCapturing, mediaRecorderRef]);
+  }, []);
 
   const handleDataAvailable = React.useCallback(
     ({ data }) => {
@@ -31,7 +31,7 @@ const VideoApp = () => {
   const handleStopCaptureClick = React.useCallback(() => {
     mediaRecorderRef.current.stop();
     setCapturing(false);
-  }, [mediaRecorderRef, webcamRef, setCapturing]);
+  }, []);
 
   const handleDownload = React.useCallback(() => {
     if (recordedChunks.length) {
