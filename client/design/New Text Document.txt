@@ -1,0 +1,36 @@
+FixLab - React Image Capture &  Audio Video Recording Tools
+
+
+<h2>FixLab - React Image Capture &amp; &nbsp;Audio Video Recording Tools</h2>
+<p><br></p>
+<p><strong>Live link</strong>: <a data-fr-linked="true" href="https://fixlab.themesoft69.com">https://fixlab.themesoft69.com</a></p>
+<p><br><span style="text-align: start;color: rgb(13, 13, 13);background-color: rgb(255, 255, 255);font-size: 16px;">Step into the future of multimedia creation with FixLab &ndash; the ultimate React JS application for image capture and audio video recording! With its robust features and seamless performance, FixLab sets the standard for effortless multimedia creation. Here&apos;s what sets FixLab apart:</span></p>
+<p><br></p>
+<ol>
+    <li>
+        <p><strong>Instant Photo Capture:&nbsp;</strong>Capture stunning photos with just a click, ensuring you never miss a moment.</p>
+    </li>
+    <li>
+        <p><strong>Downloadable Video Recording</strong>: Record high-quality videos on the fly and download them instantly for sharing or editing.</p>
+    </li>
+    <li>
+        <p><strong>Crystal Clear Audio Recording</strong>: Capture crisp audio recordings with precision and clarity, perfect for podcasts, interviews, and more.</p>
+    </li>
+    <li>
+        <p><strong>Intuitive Controls</strong>: With easy-to-use controls and a user-friendly interface, FixLab ensures a smooth and hassle-free experience for users of all levels.</p>
+    </li>
+</ol>
+<p>Whether you&apos;re a professional content creator, a social media enthusiast, or simply looking to enhance your web application, FixLab provides the tools you need to unleash your creativity and captivate your audience. Upgrade your multimedia capabilities with FixLab &ndash; the possibilities are endless!</p>
+<p><br></p>
+<h3>Note:</h3>
+<ul style="text-align: start;color: rgb(84, 84, 84);font-size: 16px;">
+    <li>While images and illustrations are not included in the download package &ndash; if you need the images and illustrations please feel free to contact us.</li>
+</ul>
+<p><br></p>
+<h4 style="text-align: start;color: rgb(84, 84, 84);font-size: 16px;"><b>24-HOUR SUPPORT:</b></h4>
+<ul>
+    <li>Quick, Dedicated &amp; Professional Support</li>
+    <li>We only provide support through our email&nbsp;<a data-fr-linked="true" href="mailto:themesoft69@gmail.com">themesoft69@gmail.com</a></li>
+    <li>For any pre-purchase query, please use email and the item&rsquo;s comment section on ThemeForest. Thanks!</li>
+</ul>
+<p><br></p>
