@@ -112,7 +112,7 @@ const Home = () => {
                 <div className="img_wrap">
                   <img
                     className="img-fluid"
-                    src="/img/feature-illustration-1-dark.svg"
+                    src="/img/feature-1.png"
                     alt="img"
                   />
                 </div>
@@ -126,7 +126,7 @@ const Home = () => {
                 <div className="img_wrap">
                   <img
                     className="img-fluid"
-                    src="/img/feature-illustration-2-dark.svg"
+                    src="/img/feature-2.png"
                     alt="img"
                   />
                 </div>
@@ -140,7 +140,7 @@ const Home = () => {
                 <div className="img_wrap">
                   <img
                     className="img-fluid"
-                    src="/img/feature-illustration-3-dark.svg"
+                    src="/img/feature-3.png"
                     alt="img"
                   />
                 </div>
