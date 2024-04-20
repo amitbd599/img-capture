@@ -239,7 +239,7 @@ header nav ul li a.active {
   transition: all 0.4s linear;
   display: inline-block;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--p-color);
 }
 
