@@ -11,58 +11,66 @@ const MasterLayout = (props) => {
     setSidebar(!sidebar);
   };
   return (
-    <section className="root">
+    <section className='root'>
       <Loader />
       {/* Header */}
       <header>
         <section>
-          <div className="container">
-            <div className="row">
-              <div className="col-9 col-md-4">
-                <div className="logo">
+          <div className='container'>
+            <div className='row'>
+              <div className='col-9 col-md-4'>
+                <div className='logo'>
                   <Link to={"/"}>
-                    <img src="/img/logo-inverse.png" alt="" />
+                    <img src='/img/logo-inverse.png' alt='' />
                   </Link>
                 </div>
               </div>
-              <div className="col-3 col-md-8">
-                <nav className="main">
+              <div className='col-3 col-md-8'>
+                <nav className='main'>
                   <ul>
                     <li>
                       <NavLink
-                        to="/"
-                        className={(navData) => navData.isActive && "active"}
+                        to='/'
+                        className={(navData) =>
+                          navData.isActive ? "active" : ""
+                        }
                       >
                         Home
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="/capture-photo"
-                        className={(navData) => navData.isActive && "active"}
+                        to='/capture-photo'
+                        className={(navData) =>
+                          navData.isActive ? "active" : ""
+                        }
                       >
                         Capture Photo
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="/capture-video"
-                        className={(navData) => navData.isActive && "active"}
+                        to='/capture-video'
+                        className={(navData) =>
+                          navData.isActive ? "active" : ""
+                        }
                       >
                         Capture Video
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="/audio-recording"
-                        className={(navData) => navData.isActive && "active"}
+                        to='/audio-recording'
+                        className={(navData) =>
+                          navData.isActive ? "active" : ""
+                        }
                       >
                         Audio Recording
                       </NavLink>
                     </li>
                   </ul>
                 </nav>
-                <div className="menu-icon">
+                <div className='menu-icon'>
                   <FiMenu onClick={sidebarControl} />
                 </div>
               </div>
@@ -71,44 +79,44 @@ const MasterLayout = (props) => {
         </section>
 
         {/* sidebar */}
-        <div className={`sidebar ${sidebar && "active"}`}>
+        <div className={`sidebar ${sidebar ? "active" : ""}`}>
           <nav>
-            <div className="inner">
-              <div className="logo">
-                <img src="/img/logo-inverse.png" alt="" />
-                <div className="close" onClick={sidebarControl}>
+            <div className='inner'>
+              <div className='logo'>
+                <img src='/img/logo-inverse.png' alt='' />
+                <div className='close' onClick={sidebarControl}>
                   <FaXmark />
                 </div>
               </div>
               <ul>
                 <li>
                   <NavLink
-                    to="/"
-                    className={(navData) => navData.isActive && "active"}
+                    to='/'
+                    className={(navData) => (navData.isActive ? "active" : "")}
                   >
                     Home
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/capture-photo"
-                    className={(navData) => navData.isActive && "active"}
+                    to='/capture-photo'
+                    className={(navData) => (navData.isActive ? "active" : "")}
                   >
                     Capture Photo
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/capture-video"
-                    className={(navData) => navData.isActive && "active"}
+                    to='/capture-video'
+                    className={(navData) => (navData.isActive ? "active" : "")}
                   >
                     Capture Video
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/audio-recording"
-                    className={(navData) => navData.isActive && "active"}
+                    to='/audio-recording'
+                    className={(navData) => (navData.isActive ? "active" : "")}
                   >
                     Audio Recording
                   </NavLink>
@@ -121,11 +129,11 @@ const MasterLayout = (props) => {
       {/* Main body */}
       <main>{props.children}</main>
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
+      <footer className='footer'>
+        <div className='container'>
           <div>
-            <div className="info">
-              <h2 className="title">
+            <div className='info'>
+              <h2 className='title'>
                 So let's get started <br /> with FixLab
               </h2>
               <p>
@@ -133,29 +141,29 @@ const MasterLayout = (props) => {
                 tasks properly
               </p>
             </div>
-            <div className="top-footer mt-3">
-              <div className="row">
-                <div className="col-xl-6">
+            <div className='top-footer mt-3'>
+              <div className='row'>
+                <div className='col-xl-6'>
                   <div>
                     <p>themesoft69 © 2024. All Rights Reserved.</p>
                   </div>
                 </div>
 
-                <div className="col-xl-6">
-                  <div className="social">
+                <div className='col-xl-6'>
+                  <div className='social'>
                     <ul>
                       <li>
-                        <Link to="#">
+                        <Link to='#'>
                           <FaFacebookF />
                         </Link>
                       </li>
                       <li>
-                        <Link to="#">
+                        <Link to='#'>
                           <FaTwitter />
                         </Link>
                       </li>
                       <li>
-                        <Link to="#">
+                        <Link to='#'>
                           <FaLinkedinIn />
                         </Link>
                       </li>

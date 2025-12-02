@@ -7,7 +7,20 @@ const VideoApp = () => {
   const [capturing, setCapturing] = React.useState(false);
   const [recordedChunks, setRecordedChunks] = React.useState([]);
 
+  const handleDataAvailable = React.useCallback(
+    ({ data }) => {
+      if (data.size > 0) {
+        setRecordedChunks((prev) => prev.concat(data));
+      }
+    },
+    [setRecordedChunks]
+  );
+
   const handleStartCaptureClick = React.useCallback(() => {
+    if (webcamRef?.current?.state?.hasUserMedia === false) {
+      return alert("Please allow camera access to use this feature.");
+    }
+
     setCapturing(true);
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
       mimeType: "video/webm",
@@ -17,16 +30,7 @@ const VideoApp = () => {
       handleDataAvailable
     );
     mediaRecorderRef.current.start();
-  }, []);
-
-  const handleDataAvailable = React.useCallback(
-    ({ data }) => {
-      if (data.size > 0) {
-        setRecordedChunks((prev) => prev.concat(data));
-      }
-    },
-    [setRecordedChunks]
-  );
+  }, [handleDataAvailable]);
 
   const handleStopCaptureClick = React.useCallback(() => {
     mediaRecorderRef.current.stop();
@@ -56,41 +60,57 @@ const VideoApp = () => {
     setRecord(e);
   };
 
-  return (
-    <section className="camera">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-6">
-            <Webcam audio={record} ref={webcamRef} />
-            <div>
-              <label className="cyberpunk-checkbox-label">
-                <input
-                  type="checkbox"
-                  defaultChecked={true}
-                  onChange={(e) => handelCheck(e.target.checked)}
-                  className="cyberpunk-checkbox"
-                />
-                Record with sound?
-              </label>
+  console.log(webcamRef?.current?.state?.hasUserMedia);
 
-              {capturing ? (
-                <button onClick={handleStopCaptureClick}>
-                  Stop Video Record
-                </button>
-              ) : (
-                <button onClick={handleStartCaptureClick}>
-                  Start Video Record
-                </button>
-              )}
-            </div>
+  return (
+    <section className='camera'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-xl-6'>
+            {webcamRef?.current?.state?.hasUserMedia ===
+            (false || undefined) ? (
+              <>
+                <p className='text-danger'>
+                  ⚠️ Please allow camera access to use this feature or camera is
+                  not available.
+                </p>
+              </>
+            ) : (
+              <>
+                <Webcam audio={record} ref={webcamRef} />
+                <div>
+                  <label className='cyberpunk-checkbox-label'>
+                    <input
+                      type='checkbox'
+                      defaultChecked={true}
+                      onChange={(e) => handelCheck(e.target.checked)}
+                      className='cyberpunk-checkbox'
+                    />
+                    Record with sound?
+                  </label>
+
+                  {capturing ? (
+                    <button onClick={handleStopCaptureClick}>
+                      Stop Video Record
+                    </button>
+                  ) : (
+                    <button onClick={handleStartCaptureClick}>
+                      Start Video Record
+                    </button>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-xl-6">
+        <div className='row'>
+          <div className='col-xl-6'>
             <div>
-              {recordedChunks.length > 0 && (
+              {recordedChunks.length > 0 ? (
                 <button onClick={handleDownload}>Download Video</button>
+              ) : (
+                <></>
               )}
             </div>
           </div>

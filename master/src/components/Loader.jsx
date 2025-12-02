@@ -9,9 +9,9 @@ function Loader() {
   }, []);
   return (
     <>
-      {active === true && (
-        <section className="loader">
-          <div className="spinner">
+      {active === true ? (
+        <section className='loader'>
+          <div className='spinner'>
             <div></div>
             <div></div>
             <div></div>
@@ -20,6 +20,8 @@ function Loader() {
             <div></div>
           </div>
         </section>
+      ) : (
+        <></>
       )}
     </>
   );

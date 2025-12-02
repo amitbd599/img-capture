@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const RecordApp = () => {
   const [audioRecorder, setAudioRecorder] = useState(null);
   const [audioRecording, setAudioRecording] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [error, setError] = useState(false);
   const startRecording = async () => {
     try {
+      console.log(navigator.mediaDevices.getUserMedia);
+
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream);
       const chunks = [];
@@ -23,7 +27,8 @@ const RecordApp = () => {
       setAudioRecorder(recorder);
       setIsRecording(true);
     } catch (error) {
-      console.error("Error accessing microphone:", error);
+      setError(true);
+      setErrorMsg("Error accessing microphone: " + error.message);
     }
   };
 
@@ -46,32 +51,40 @@ const RecordApp = () => {
     }
   };
   return (
-    <section className="record">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <div>
-              <div className="loader-audio">
-                {isRecording && (
-                  <>
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="btn-inner">
-              {isRecording ? (
-                <button onClick={stopRecording}>Stop Recording</button>
-              ) : (
-                <button onClick={startRecording}>Start Recording</button>
-              )}
-              {audioRecording && !isRecording && (
-                <button onClick={saveRecording}>Save Recording</button>
-              )}
-            </div>
+    <section className='record'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-12'>
+            {error ? (
+              <p className='text-danger'>{errorMsg}</p>
+            ) : (
+              <>
+                <div>
+                  <div className='loader-audio'>
+                    {isRecording ? (
+                      <>
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
+                <div className='btn-inner'>
+                  {isRecording ? (
+                    <button onClick={stopRecording}>Stop Recording</button>
+                  ) : (
+                    <button onClick={startRecording}>Start Recording</button>
+                  )}
+                  {audioRecording && !isRecording && (
+                    <button onClick={saveRecording}>Save Recording</button>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
